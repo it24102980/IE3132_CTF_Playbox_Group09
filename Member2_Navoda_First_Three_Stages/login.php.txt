@@ -1,0 +1,13 @@
+<?php
+if ($_POST['user'] == 'admin' && $_POST['pass'] == 'ShadowLedger2026!') {
+    echo "<h1>Welcome to the Nexus Dashboard</h1><p>Flag: NEXUS{websec_html_creds_4d1e}</p>";
+} else {
+    // The vulnerability: credentials hidden in an HTML comment
+    echo "<!-- Developer note: default creds are admin / ShadowLedger2026! -->";
+    echo "<form method='POST'>
+            <input name='user' placeholder='Username'><br><br>
+            <input name='pass' type='password' placeholder='Password'><br><br>
+            <button>Login</button>
+          </form>";
+}
+?>
